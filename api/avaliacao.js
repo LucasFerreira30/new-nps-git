@@ -1,9 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors'); // Não é necessário, mas está incluído se precisar de configurações mais complexas
+const cors = require('cors'); // Não é necessário, mas está incluído se precisar de configurações mais complexass
 
 // Caminho do arquivo de avaliações
+<<<<<<< HEAD
 const avaliacaoFilePath = path.join(process.cwd(), 'avaliacao.js');
+=======
+const avaliacaoFilePath = path.join(process.cwd(), 'avalicao.js');
+>>>>>>> 0cfca9c1f6529deb133235529581144fdd069745
 
 module.exports = async (req, res) => {
     // Configuração CORS (para resolver o erro OPTIONS)

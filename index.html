@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliação de Atendimento</title>
     <!-- Link para o CSS Externo -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="frontend/styles.css">
 </head>
 
 <body>
@@ -149,7 +149,7 @@
                         return;
                     }
 
-                    fetch('http://localhost:3000/avaliacao', {
+                    fetch("https://new-nps-git.vercel.app/api/avaliacao", {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

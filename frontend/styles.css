@@ -1,0 +1,235 @@
+/* Estilos gerais para o corpo e container */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa 100% da altura da janela */
+    flex-direction: column;
+}
+
+/* Centralização do conteúdo principal */
+.container {
+    width: 90%; /* 90% da largura da tela, adaptável */
+    max-width: 1000px; /* Máxima largura de 1000px para evitar telas grandes demais */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Lado esquerdo com as notas de 0 a 10 */
+.left {
+    width: 50%;
+    padding: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Lado direito do formulário */
+.right {
+    width: 50%;
+    padding: 20px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+/* Tamanho e estilo dos botões de notas */
+.rating-buttons button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Emojis das notas */
+.emoji {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+/* Caixa de comentário */
+.comment-box {
+    width: 100%;
+    height: 120px;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Rodapé da página */
+.footer-content {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o link de ajuda e rodapé */
+.text-muted {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.text-muted a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-muted a:hover {
+    text-decoration: underline;
+}
+
+/* Sobrepor o CPF no início */
+.cpf-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Caixa de CPF */
+.cpf-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Estilos de input e botões do CPF */
+.cpf-input {
+    padding: 10px;
+    width: 75%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.cpf-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.cpf-button:hover {
+    background-color: #45a049;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Container ajustado para dispositivos móveis */
+    .container {
+        flex-direction: column; /* Alterar para coluna em dispositivos móveis */
+        width: 95%; /* Ocupa 95% da largura da tela */
+    }
+
+    /* Lado esquerdo com notas */
+    .left {
+        width: 100%; /* 100% de largura para o lado esquerdo */
+    }
+
+    /* Lado direito do formulário */
+    .right {
+        width: 100%; /* 100% de largura para o lado direito */
+    }
+
+    /* Ajuste do tamanho dos emojis */
+    .emoji {
+        font-size: 50px; /* Tamanho do emoji reduzido para telas pequenas */
+    }
+
+    /* Ajuste do tamanho dos botões de nota */
+    .rating-buttons button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* Caixa de comentário */
+    .comment-box {
+        width: 100%;
+        height: 100px;
+        font-size: 14px;
+    }
+
+    /* Ajuste da fonte e padding do rodapé */
+    .footer-content {
+        font-size: 12px;
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas menores, como celulares compactos */
+    .submit-button {
+        font-size: 16px; /* Tamanho do texto do botão reduzido */
+        padding: 8px 16px; /* Menor padding */
+    }
+
+    .cpf-container {
+        width: 90%; /* Caixa CPF ocupando 90% da tela */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        height: auto;
+    }
+
+    .left, .right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .cpf-container {
+        width: 90%;
+    }
+}

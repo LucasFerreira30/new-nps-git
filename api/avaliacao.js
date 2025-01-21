@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors'); // Não é necessário, mas está incluído se precisar de configurações mais complexas
+const cors = require('cors'); // Não é necessário, mas está incluído se precisar de configurações mais complexass
 
 // Caminho do arquivo de avaliações
 const avaliacaoFilePath = path.join(process.cwd(), 'avaliacoes.json');

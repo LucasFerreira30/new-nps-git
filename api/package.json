@@ -1,0 +1,12 @@
+{
+    "name": "avaliacoes-backend",
+    "version": "1.0.0",
+    "main": "api/avaliacao.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "cors": "^2.8.5"
+    }
+  }
+  

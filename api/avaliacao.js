@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const cors = require('cors');
+const cors = require('cors'); // Não é necessário, mas está incluído se precisar de configurações mais complexas
 
 // Caminho do arquivo de avaliações
 const avaliacaoFilePath = path.join(process.cwd(), 'avaliacoes.json');
@@ -8,11 +8,14 @@ const avaliacaoFilePath = path.join(process.cwd(), 'avaliacoes.json');
 module.exports = async (req, res) => {
     // Configuração CORS (para resolver o erro OPTIONS)
     if (req.method === 'OPTIONS') {
-        res.setHeader('Access-Control-Allow-Methods', 'POST');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-        return res.status(200).end();
+        // Definir cabeçalhos CORS necessários
+        res.setHeader('Access-Control-Allow-Origin', '*'); // Permite requisições de qualquer origem
+        res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Permite métodos POST e OPTIONS
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Permite cabeçalhos Content-Type
+        return res.status(200).end(); // Finaliza a requisição OPTIONS
     }
 
+    // Processo para requisição POST
     if (req.method === 'POST') {
         const novaAvaliacao = req.body;
 
@@ -33,7 +36,7 @@ module.exports = async (req, res) => {
             return res.status(500).json({ success: false, message: 'Erro ao salvar a avaliação.' });
         }
     } else {
-        res.setHeader('Allow', ['POST']);
+        res.setHeader('Allow', ['POST', 'OPTIONS']);
         return res.status(405).json({ success: false, message: 'Método não permitido.' });
     }
 };
